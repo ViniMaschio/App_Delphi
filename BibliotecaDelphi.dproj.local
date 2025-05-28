@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/05/23 19:35:05.000.683,=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/05/23 19:38:01.000.381,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UTelaPrincipal.pas</Transaction>
+    <Transaction>2025/05/23 19:38:01.000.381,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UTelaPrincipal.dfm</Transaction>
+    <Transaction>2025/05/23 20:32:13.000.025,=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/05/23 20:32:30.000.418,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UCadastroAutor.dfm</Transaction>
+    <Transaction>2025/05/23 20:32:30.000.418,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UCadastroAutor.pas</Transaction>
+    <Transaction>2025/05/23 21:26:25.000.345,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UTelaPrincipal.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UTelaPrincipal.pas</Transaction>
+    <Transaction>2025/05/23 21:26:25.000.345,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UTelaPrincipal.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UTelaPrincipal.dfm</Transaction>
+    <Transaction>2025/05/23 21:27:45.000.179,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UCadastroAutor.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroAutor.pas</Transaction>
+    <Transaction>2025/05/23 21:27:45.000.179,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\UCadastroAutor.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroAutor.dfm</Transaction>
+    <Transaction>2025/05/23 21:29:43.000.268,C:\Users\Vinicius Maschio\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Project1.dproj</Transaction>
+    <Transaction>2025/05/26 19:27:50.000.852,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 19:28:37.000.579,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroEditoras.dfm</Transaction>
+    <Transaction>2025/05/26 19:28:37.000.579,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroEditoras.pas</Transaction>
+    <Transaction>2025/05/26 19:51:16.000.076,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit2.pas</Transaction>
+    <Transaction>2025/05/26 19:51:38.000.322,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit2.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UEditoras.dfm</Transaction>
+    <Transaction>2025/05/26 19:51:38.000.322,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit2.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UEditoras.pas</Transaction>
+    <Transaction>2025/05/26 21:02:22.000.188,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 21:02:36.000.291,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UAutor.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 21:02:36.000.291,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UAutor.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm</Transaction>
+    <Transaction>2025/05/26 21:52:15.000.359,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 21:52:26.000.720,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\ULivros.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm</Transaction>
+    <Transaction>2025/05/26 21:52:26.000.720,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\ULivros.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 22:05:26.000.534,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 22:05:41.000.367,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroLivros.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm</Transaction>
+    <Transaction>2025/05/26 22:05:41.000.367,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroLivros.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 23:32:35.000.397,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 23:32:49.000.558,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UExemplares.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm</Transaction>
+    <Transaction>2025/05/26 23:32:49.000.558,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UExemplares.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 23:45:40.000.366,=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/26 23:45:58.000.917,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroExemplares.dfm=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.dfm</Transaction>
+    <Transaction>2025/05/26 23:45:58.000.917,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\UCadastroExemplares.pas=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Unit1.pas</Transaction>
+    <Transaction>2025/05/27 22:36:49.444,C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\BibliotecaDelphi.dproj=C:\Users\Vinicius Maschio\Desktop\trabalho Dhelp\Project1.dproj</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="UTelaPrincipal.pas"/>
+    <File Path="UTelaPrincipal.dfm"/>
+    <File Path="UCadastroAutor.pas"/>
+    <File Path="UCadastroAutor.dfm"/>
+    <File Path="UCadastroEditoras.pas"/>
+    <File Path="UCadastroEditoras.dfm"/>
+    <File Path="UEditoras.pas"/>
+    <File Path="UEditoras.dfm"/>
+    <File Path="UAutor.pas"/>
+    <File Path="UAutor.dfm"/>
+    <File Path="ULivros.pas"/>
+    <File Path="ULivros.dfm"/>
+    <File Path="UCadastroLivros.pas"/>
+    <File Path="UCadastroLivros.dfm"/>
+    <File Path="UExemplares.pas"/>
+    <File Path="UExemplares.dfm"/>
+    <File Path="UCadastroExemplares.pas"/>
+    <File Path="UCadastroExemplares.dfm"/>
+  </ProjectSortOrder>
+</BorlandProject>

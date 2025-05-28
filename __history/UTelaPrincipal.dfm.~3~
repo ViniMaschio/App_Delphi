@@ -1,0 +1,100 @@
+object FTelaPrincipal: TFTelaPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'FTelaPrincipal'
+  ClientHeight = 494
+  ClientWidth = 810
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object ToolBar1: TToolBar
+    Left = 0
+    Top = 0
+    Width = 810
+    Height = 29
+    ButtonHeight = 23
+    ButtonWidth = 69
+    Caption = 'ToolBar1'
+    ShowCaptions = True
+    TabOrder = 0
+    object BnovoLivro: TToolButton
+      Left = 0
+      Top = 0
+      Caption = 'Novo Livro'
+      ImageIndex = 0
+    end
+    object ToolButton1: TToolButton
+      Left = 69
+      Top = 0
+      Caption = 'Novo Autor'
+      ImageIndex = 1
+      OnClick = ToolButton1Click
+    end
+    object ToolButton2: TToolButton
+      Left = 138
+      Top = 0
+      Caption = 'Editoras'
+      ImageIndex = 2
+      OnClick = ToolButton2Click
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 29
+    Width = 810
+    Height = 465
+    Align = alClient
+    DataSource = DataSource1
+    TabOrder = 1
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = FDQuery1
+    Left = 376
+    Top = 320
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\bancoDeDados\TESTE.FDB'
+      'User_Name=sysdba'
+      'Password=masterkey'
+      'Protocol=TCPIP'
+      'Server=localhost'
+      'CharacterSet=WIN1252'
+      'DriverID=FB')
+    Connected = True
+    LoginPrompt = False
+    Left = 248
+    Top = 312
+  end
+  object FDTransaction1: TFDTransaction
+    Options.Isolation = xiReadCommitted
+    Connection = FDConnection1
+    Left = 272
+    Top = 248
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select'
+      'livros.livro_titulo as Titulo,'
+      'livros.livro_subtitulo as Subtitulo,'
+      'autor.autor_nome as Autor'
+      'from livros'
+      'inner join autor on autor.autor_id = livros.livro_autor_id'
+      'order by livros.livro_titulo, livros.livro_subtitulo'
+      '')
+    Left = 376
+    Top = 248
+  end
+end

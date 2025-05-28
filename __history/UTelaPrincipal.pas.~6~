@@ -1,0 +1,68 @@
+unit UTelaPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.FB,
+  FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS,
+  FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ComCtrls, Vcl.ToolWin, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFTelaPrincipal = class(TForm)
+    DataSource1: TDataSource;
+    FDConnection1: TFDConnection;
+    FDTransaction1: TFDTransaction;
+    FDQuery1: TFDQuery;
+    ToolBar1: TToolBar;
+    BnovoLivro: TToolButton;
+    ToolButton1: TToolButton;
+    ToolButton2: TToolButton;
+    ToolButton3: TToolButton;
+    procedure ToolButton1Click(Sender: TObject);
+    procedure ToolButton2Click(Sender: TObject);
+    procedure BnovoLivroClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FTelaPrincipal: TFTelaPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses UCadastroAutor, UEditoras, UAutor, ULivros;
+
+procedure TFTelaPrincipal.BnovoLivroClick(Sender: TObject);
+begin
+FLivros :=  TFLivros.Create(Application);
+FLivros.FDQuery1.Open;
+FLivros.ShowModal;
+FreeAndNil(FEditoras);
+end;
+
+procedure TFTelaPrincipal.ToolButton1Click(Sender: TObject);
+begin
+
+FAutor :=  TFAutor.Create(Application);
+FAutor.FDQuery1.Open;
+FAutor.ShowModal;
+FreeAndNil(FEditoras);
+end;
+
+procedure TFTelaPrincipal.ToolButton2Click(Sender: TObject);
+begin
+FEditoras :=TFEditoras.Create(Application);
+FEditoras.FDQuery1.Open;
+FEditoras.ShowModal;
+FreeAndNil(FEditoras);
+end;
+
+end.

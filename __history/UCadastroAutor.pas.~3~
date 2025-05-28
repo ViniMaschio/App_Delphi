@@ -1,0 +1,75 @@
+unit UCadastroAutor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls, Data.DB,
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFTelaAutor = class(TForm)
+    FDQuery1: TFDQuery;
+    FDUpdateSQL1: TFDUpdateSQL;
+    FDQuery1AUTOR_ID: TFDAutoIncField;
+    FDQuery1AUTOR_NOME: TStringField;
+    FDQuery1AUTOR_SOBRENOME: TStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FTelaAutor: TFTelaAutor;
+
+implementation
+
+{$R *.dfm}
+
+uses UTelaPrincipal;
+
+procedure TFTelaAutor.Button1Click(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TFTelaAutor.Button2Click(Sender: TObject);
+begin
+
+  var msg : string := 'campos vazios';
+
+  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  begin
+    MessageDlg(msg,mtError,[mbOk],0);
+    Abort;
+  end;
+
+  FDQuery1.Post;
+  Close;
+
+end;
+
+procedure TFTelaAutor.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if  FDQuery1.state in [dsEdit, dsInsert] then
+  FDQuery1.Cancel;
+
+  Close;
+end;
+
+end.

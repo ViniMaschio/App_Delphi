@@ -1,0 +1,197 @@
+object FCadastroLivros: TFCadastroLivros
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro Livros'
+  ClientHeight = 301
+  ClientWidth = 774
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClose = FormClose
+  TextHeight = 15
+  object Label2: TLabel
+    Left = 8
+    Top = 56
+    Width = 75
+    Height = 15
+    Caption = 'LIVRO_TITULO'
+    FocusControl = DBEdit2
+  end
+  object Label3: TLabel
+    Left = 8
+    Top = 104
+    Width = 95
+    Height = 15
+    Caption = 'LIVRO_SUBTITULO'
+    FocusControl = DBEdit3
+  end
+  object Label4: TLabel
+    Left = 8
+    Top = 152
+    Width = 74
+    Height = 15
+    Caption = 'LIVRO_AUTOR'
+  end
+  object Label1: TLabel
+    Left = 8
+    Top = 6
+    Width = 48
+    Height = 15
+    Caption = 'LIVRO_ID'
+    FocusControl = DBEdit1
+  end
+  object DBEdit2: TDBEdit
+    Left = 8
+    Top = 72
+    Width = 754
+    Height = 23
+    DataField = 'LIVRO_TITULO'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBEdit3: TDBEdit
+    Left = 8
+    Top = 120
+    Width = 454
+    Height = 23
+    DataField = 'LIVRO_SUBTITULO'
+    DataSource = DataSource1
+    TabOrder = 1
+  end
+  object Button1: TButton
+    Left = 176
+    Top = 240
+    Width = 75
+    Height = 25
+    Caption = 'Sair'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 387
+    Top = 240
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object DBLookupComboBox1: TDBLookupComboBox
+    Left = 8
+    Top = 173
+    Width = 145
+    Height = 23
+    DataField = 'LIVRO_AUTOR_ID'
+    DataSource = DataSource1
+    KeyField = 'AUTOR_ID'
+    ListField = 'AUTOR_NOME'
+    ListSource = DataSource2
+    TabOrder = 4
+  end
+  object DBEdit1: TDBEdit
+    Left = 8
+    Top = 27
+    Width = 48
+    Height = 23
+    DataField = 'LIVRO_ID'
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object FDQuery1: TFDQuery
+    Connection = FTelaPrincipal.FDConnection1
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint]
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.AutoIncFields = 'livro_id'
+    UpdateObject = FDUpdateSQL1
+    SQL.Strings = (
+      'select * from livros'
+      'where livro_id like :livro_id')
+    Left = 232
+    Top = 16
+    ParamData = <
+      item
+        Name = 'LIVRO_ID'
+        DataType = ftString
+        ParamType = ptInput
+        Size = 30
+        Value = Null
+      end>
+    object FDQuery1LIVRO_ID: TIntegerField
+      FieldName = 'LIVRO_ID'
+      Origin = 'LIVRO_ID'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object FDQuery1LIVRO_TITULO: TStringField
+      FieldName = 'LIVRO_TITULO'
+      Origin = 'LIVRO_TITULO'
+      Required = True
+      Size = 50
+    end
+    object FDQuery1LIVRO_SUBTITULO: TStringField
+      FieldName = 'LIVRO_SUBTITULO'
+      Origin = 'LIVRO_SUBTITULO'
+      Size = 30
+    end
+    object FDQuery1LIVRO_AUTOR_ID: TIntegerField
+      FieldName = 'LIVRO_AUTOR_ID'
+      Origin = 'LIVRO_AUTOR_ID'
+      Required = True
+    end
+  end
+  object FDUpdateSQL1: TFDUpdateSQL
+    Connection = FTelaPrincipal.FDConnection1
+    InsertSQL.Strings = (
+      'INSERT INTO LIVROS'
+      '(LIVRO_TITULO, LIVRO_SUBTITULO, LIVRO_AUTOR_ID)'
+      
+        'VALUES (:NEW_LIVRO_TITULO, :NEW_LIVRO_SUBTITULO, :NEW_LIVRO_AUTO' +
+        'R_ID)'
+      
+        'RETURNING LIVRO_ID, LIVRO_TITULO, LIVRO_SUBTITULO, LIVRO_AUTOR_I' +
+        'D')
+    ModifySQL.Strings = (
+      'UPDATE LIVROS'
+      
+        'SET LIVRO_TITULO = :NEW_LIVRO_TITULO, LIVRO_SUBTITULO = :NEW_LIV' +
+        'RO_SUBTITULO, '
+      '  LIVRO_AUTOR_ID = :NEW_LIVRO_AUTOR_ID'
+      'WHERE LIVRO_ID = :OLD_LIVRO_ID'
+      
+        'RETURNING LIVRO_ID, LIVRO_TITULO, LIVRO_SUBTITULO, LIVRO_AUTOR_I' +
+        'D')
+    DeleteSQL.Strings = (
+      'DELETE FROM LIVROS'
+      'WHERE LIVRO_ID = :OLD_LIVRO_ID')
+    FetchRowSQL.Strings = (
+      'SELECT LIVRO_ID, LIVRO_TITULO, LIVRO_SUBTITULO, LIVRO_AUTOR_ID'
+      'FROM LIVROS'
+      'WHERE LIVRO_ID = :OLD_LIVRO_ID')
+    Left = 424
+    Top = 16
+  end
+  object DataSource1: TDataSource
+    AutoEdit = False
+    DataSet = FDQuery1
+    Left = 304
+    Top = 16
+  end
+  object FDQuery2: TFDQuery
+    Active = True
+    CachedUpdates = True
+    Connection = FTelaPrincipal.FDConnection1
+    SQL.Strings = (
+      'select autor_id, autor_nome from autor')
+    Left = 576
+    Top = 16
+  end
+  object DataSource2: TDataSource
+    AutoEdit = False
+    DataSet = FDQuery2
+    Left = 656
+    Top = 16
+  end
+end

@@ -1,0 +1,82 @@
+unit UCadastroLivros;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.Client,
+  Data.DB, FireDAC.Comp.DataSet, Vcl.StdCtrls, Vcl.Mask, Vcl.ExtCtrls,
+  Vcl.DBCtrls;
+
+type
+  TFCadastroLivros = class(TForm)
+    FDQuery1: TFDQuery;
+    FDUpdateSQL1: TFDUpdateSQL;
+    FDQuery1LIVRO_ID: TIntegerField;
+    FDQuery1LIVRO_TITULO: TStringField;
+    FDQuery1LIVRO_SUBTITULO: TStringField;
+    FDQuery1LIVRO_AUTOR_ID: TIntegerField;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    Label3: TLabel;
+    DBEdit3: TDBEdit;
+    Label4: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    FDQuery2: TFDQuery;
+    DataSource2: TDataSource;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCadastroLivros: TFCadastroLivros;
+
+implementation
+
+{$R *.dfm}
+
+uses UTelaPrincipal;
+
+procedure TFCadastroLivros.Button1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFCadastroLivros.Button2Click(Sender: TObject);
+begin
+
+  var msg : string := 'campos vazios';
+
+  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  begin
+    MessageDlg(msg,mtError,[mbOk],0);
+    Abort;
+  end;
+
+  FDQuery1.Post;
+
+  Close;
+
+end;
+
+procedure TFCadastroLivros.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if  FDQuery1.state in [dsEdit, dsInsert] then
+  FDQuery1.Cancel;
+
+  Close;
+end;
+
+end.

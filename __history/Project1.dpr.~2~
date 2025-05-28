@@ -1,0 +1,20 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  UTelaPrincipal in 'UTelaPrincipal.pas' {FTelaPrincipal},
+  UCadastroAutor in 'UCadastroAutor.pas' {FTelaAutor},
+  UCadastroEditoras in 'UCadastroEditoras.pas' {FCadastroEditoras},
+  UEditoras in 'UEditoras.pas' {FEditoras};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFTelaPrincipal, FTelaPrincipal);
+  Application.CreateForm(TFTelaAutor, FTelaAutor);
+  Application.CreateForm(TFCadastroEditoras, FCadastroEditoras);
+  Application.CreateForm(TFEditoras, FEditoras);
+  Application.Run;
+end.

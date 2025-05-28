@@ -1,0 +1,16 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  UTelaPrincipal in 'UTelaPrincipal.pas' {FTelaPrincipal},
+  UCadastroAutor in 'UCadastroAutor.pas' {FTelaAutor};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFTelaPrincipal, FTelaPrincipal);
+  Application.CreateForm(TFTelaAutor, FTelaAutor);
+  Application.Run;
+end.
