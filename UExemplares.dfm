@@ -3,7 +3,7 @@ object FExemplares: TFExemplares
   Top = 0
   Caption = 'Exemplares'
   ClientHeight = 623
-  ClientWidth = 1073
+  ClientWidth = 1044
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object FExemplares: TFExemplares
   object DBGrid1: TDBGrid
     Left = 8
     Top = 24
-    Width = 1057
+    Width = 1025
     Height = 521
     DataSource = DataSource1
     ReadOnly = True
@@ -26,50 +26,50 @@ object FExemplares: TFExemplares
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object Button1: TButton
+  object BntNovo: TButton
     Left = 40
     Top = 576
     Width = 75
     Height = 25
     Caption = 'Novo'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = BntNovoClick
   end
-  object Button2: TButton
+  object BntEditar: TButton
     Left = 144
     Top = 576
     Width = 75
     Height = 25
     Caption = 'Editar'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = BntEditarClick
   end
-  object Button3: TButton
+  object BntDeletar: TButton
     Left = 248
     Top = 576
     Width = 75
     Height = 25
     Caption = 'Deletar'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = BntDeletarClick
   end
-  object Button4: TButton
+  object BntSair: TButton
     Left = 944
     Top = 576
     Width = 75
     Height = 25
     Caption = 'Sair'
     TabOrder = 4
-    OnClick = Button4Click
+    OnClick = BntSairClick
   end
   object FDQuery1: TFDQuery
     Active = True
     Connection = FTelaPrincipal.FDConnection1
     SQL.Strings = (
       'SELECT '
-      '    E.EXEMPLAR_ID,'
-      '    L.LIVRO_TITULO,'
-      '    ED.EDITORA_NOME,'
+      '    E.EXEMPLAR_ID as ID,'
+      '    L.LIVRO_TITULO as titulo,'
+      '    ED.EDITORA_NOME as editora,'
       '    E.EDICAO,'
       '    E.ANO,'
       '    E.ISBN'

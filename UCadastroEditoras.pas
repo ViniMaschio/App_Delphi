@@ -16,18 +16,18 @@ type
     FDQuery1EDITORA_ID: TFDAutoIncField;
     FDQuery1EDITORA_NOME: TStringField;
     FDQuery1EDITORA_CIDADE: TStringField;
-    EditoraId: TLabel;
+    ID: TLabel;
     DBEdit1: TDBEdit;
     DataSource1: TDataSource;
     EditoraNome: TLabel;
-    DBEdit2: TDBEdit;
+    TxtEditoraNome: TDBEdit;
     EditoraCidade: TLabel;
-    DBEdit3: TDBEdit;
-    Button1: TButton;
-    Button2: TButton;
+    TxtEditoraCidade: TDBEdit;
+    BntCancelar: TButton;
+    BntSalvar: TButton;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    procedure BntCancelarClick(Sender: TObject);
+    procedure BntSalvarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,17 +43,17 @@ implementation
 
 uses UTelaPrincipal;
 
-procedure TFCadastroEditoras.Button1Click(Sender: TObject);
+procedure TFCadastroEditoras.BntCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFCadastroEditoras.Button2Click(Sender: TObject);
+procedure TFCadastroEditoras.BntSalvarClick(Sender: TObject);
 begin
 
-  var msg : string := 'campos vazios';
+  var msg : string := 'Preencher todos os campos';
 
-  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  if (TxtEditoraNome.Field.Text.IsEmpty or TxtEditoraCidade.Field.Text.IsEmpty) then
   begin
     MessageDlg(msg,mtError,[mbOk],0);
     Abort;

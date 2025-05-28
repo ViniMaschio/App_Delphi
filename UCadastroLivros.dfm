@@ -2,8 +2,8 @@ object FCadastroLivros: TFCadastroLivros
   Left = 0
   Top = 0
   Caption = 'Cadastro Livros'
-  ClientHeight = 301
-  ClientWidth = 774
+  ClientHeight = 260
+  ClientWidth = 474
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,71 +16,71 @@ object FCadastroLivros: TFCadastroLivros
   object Label2: TLabel
     Left = 8
     Top = 56
-    Width = 75
+    Width = 76
     Height = 15
-    Caption = 'LIVRO_TITULO'
-    FocusControl = DBEdit2
+    Caption = 'Titulo do Livro'
+    FocusControl = TxtLivroTitulo
   end
   object Label3: TLabel
     Left = 8
     Top = 104
-    Width = 95
+    Width = 94
     Height = 15
-    Caption = 'LIVRO_SUBTITULO'
-    FocusControl = DBEdit3
+    Caption = 'Subtitulo do Livro'
+    FocusControl = TxtLivroSubtitulo
   end
   object Label4: TLabel
     Left = 8
     Top = 152
-    Width = 74
+    Width = 83
     Height = 15
-    Caption = 'LIVRO_AUTOR'
+    Caption = 'Nome do Autor'
   end
   object Label1: TLabel
     Left = 8
     Top = 6
-    Width = 48
+    Width = 11
     Height = 15
-    Caption = 'LIVRO_ID'
-    FocusControl = DBEdit1
+    Caption = 'ID'
+    FocusControl = TxtId
   end
-  object DBEdit2: TDBEdit
+  object TxtLivroTitulo: TDBEdit
     Left = 8
     Top = 72
-    Width = 754
+    Width = 454
     Height = 23
     DataField = 'LIVRO_TITULO'
     DataSource = DataSource1
     TabOrder = 0
   end
-  object DBEdit3: TDBEdit
+  object TxtLivroSubtitulo: TDBEdit
     Left = 8
-    Top = 120
+    Top = 123
     Width = 454
     Height = 23
     DataField = 'LIVRO_SUBTITULO'
     DataSource = DataSource1
     TabOrder = 1
   end
-  object Button1: TButton
-    Left = 176
-    Top = 240
+  object BntCancelar: TButton
+    Left = 120
+    Top = 216
     Width = 75
     Height = 25
-    Caption = 'Sair'
+    Caption = 'Cancelar'
     TabOrder = 2
-    OnClick = Button1Click
+    OnClick = BntCancelarClick
   end
-  object Button2: TButton
-    Left = 387
-    Top = 240
+  object BntSalvar: TButton
+    Left = 243
+    Top = 216
     Width = 75
     Height = 25
     Caption = 'Salvar'
     TabOrder = 3
-    OnClick = Button2Click
+    OnClick = BntSalvarClick
   end
-  object DBLookupComboBox1: TDBLookupComboBox
+  object CBoxAutor: TDBLookupComboBox
     Left = 8
     Top = 173
     Width = 145
@@ -92,7 +92,7 @@ object FCadastroLivros: TFCadastroLivros
     ListSource = DataSource2
     TabOrder = 4
   end
-  object DBEdit1: TDBEdit
+  object TxtId: TDBEdit
     Left = 8
     Top = 27
     Width = 48
@@ -110,7 +110,7 @@ object FCadastroLivros: TFCadastroLivros
     SQL.Strings = (
       'select * from livros'
       'where livro_id like :livro_id')
-    Left = 232
+    Left = 112
     Top = 16
     ParamData = <
       item
@@ -171,13 +171,13 @@ object FCadastroLivros: TFCadastroLivros
       'SELECT LIVRO_ID, LIVRO_TITULO, LIVRO_SUBTITULO, LIVRO_AUTOR_ID'
       'FROM LIVROS'
       'WHERE LIVRO_ID = :OLD_LIVRO_ID')
-    Left = 424
+    Left = 240
     Top = 16
   end
   object DataSource1: TDataSource
     AutoEdit = False
     DataSet = FDQuery1
-    Left = 304
+    Left = 168
     Top = 16
   end
   object FDQuery2: TFDQuery
@@ -186,13 +186,13 @@ object FCadastroLivros: TFCadastroLivros
     Connection = FTelaPrincipal.FDConnection1
     SQL.Strings = (
       'select autor_id, autor_nome from autor')
-    Left = 576
+    Left = 304
     Top = 16
   end
   object DataSource2: TDataSource
     AutoEdit = False
     DataSet = FDQuery2
-    Left = 656
+    Left = 376
     Top = 16
   end
 end

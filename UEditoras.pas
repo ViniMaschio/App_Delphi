@@ -14,15 +14,15 @@ type
     FDQuery1: TFDQuery;
     DBGrid1: TDBGrid;
     DataSource1: TDataSource;
-    BSair: TButton;
+    BntSair: TButton;
     BNovo: TButton;
-    BDeletetar: TButton;
-    BEditar: TButton;
-    procedure BSairClick(Sender: TObject);
+    BntDeletar: TButton;
+    BntEditar: TButton;
+    procedure BntSairClick(Sender: TObject);
     procedure BNovoClick(Sender: TObject);
-    procedure BDeletetarClick(Sender: TObject);
+    procedure BntDeletarClick(Sender: TObject);
 
-    procedure BEditarClick(Sender: TObject);
+    procedure BntEditarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,7 +38,7 @@ implementation
 
 uses UTelaPrincipal, UCadastroEditoras;
 
-procedure TFEditoras.BSairClick(Sender: TObject);
+procedure TFEditoras.BntSairClick(Sender: TObject);
 begin
   Close;
 end;
@@ -55,7 +55,7 @@ end;
 
 
 
-procedure TFEditoras.BDeletetarClick(Sender: TObject);
+procedure TFEditoras.BntDeletarClick(Sender: TObject);
 begin
 
   var msg: string := 'Selecione um campo';
@@ -77,7 +77,7 @@ begin
 
 end;
 
-procedure TFEditoras.BEditarClick(Sender: TObject);
+procedure TFEditoras.BntEditarClick(Sender: TObject);
 begin
   var msg: string := 'Selecione um campo';
   if(FDQuery1.IsEmpty) then

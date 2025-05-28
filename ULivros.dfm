@@ -26,61 +26,62 @@ object FLivros: TFLivros
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object Button1: TButton
+  object BntNovo: TButton
     Left = 32
     Top = 392
     Width = 75
     Height = 25
     Caption = 'Novo'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = BntNovoClick
   end
-  object Button2: TButton
+  object BntEditar: TButton
     Left = 128
     Top = 392
     Width = 75
     Height = 25
     Caption = 'Editar'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = BntEditarClick
   end
-  object Button3: TButton
+  object BntApagar: TButton
     Left = 224
     Top = 392
     Width = 75
     Height = 25
     Caption = 'Apagar'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = BntApagarClick
   end
-  object Button4: TButton
+  object BntSair: TButton
     Left = 800
     Top = 392
     Width = 75
     Height = 25
     Caption = 'Sair'
     TabOrder = 4
-    OnClick = Button4Click
+    OnClick = BntSairClick
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = FTelaPrincipal.FDConnection1
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint]
     SQL.Strings = (
       'SELECT'
-      '    LIVROS.LIVRO_ID,'
-      '    LIVROS.LIVRO_TITULO,'
-      '    LIVROS.LIVRO_SUBTITULO,'
-      '    AUTOR.AUTOR_NOME'
+      '    LIVROS.LIVRO_ID as ID,'
+      '    LIVROS.LIVRO_TITULO as Titulo,'
+      '    LIVROS.LIVRO_SUBTITULO as Subtitulo,'
+      '    AUTOR.AUTOR_NOME as Autor'
       'FROM'
       '    LIVROS'
       'INNER JOIN'
       '    AUTOR ON LIVROS.LIVRO_AUTOR_ID = AUTOR.AUTOR_ID')
-    Left = 280
-    Top = 72
+    Left = 272
+    Top = 128
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 488
-    Top = 80
+    Left = 328
+    Top = 144
   end
 end

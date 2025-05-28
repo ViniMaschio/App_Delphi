@@ -18,14 +18,14 @@ type
     FDTransaction1: TFDTransaction;
     ToolBar1: TToolBar;
     BnovoLivro: TToolButton;
-    ToolButton1: TToolButton;
-    ToolButton2: TToolButton;
-    ToolButton3: TToolButton;
+    BntNovoAutor: TToolButton;
+    BntNovoEditoras: TToolButton;
+    BntNovoExemplares: TToolButton;
     Label1: TLabel;
-    procedure ToolButton1Click(Sender: TObject);
-    procedure ToolButton2Click(Sender: TObject);
+    procedure BntNovoAutorClick(Sender: TObject);
+    procedure BntNovoEditorasClick(Sender: TObject);
     procedure BnovoLivroClick(Sender: TObject);
-    procedure ToolButton3Click(Sender: TObject);
+    procedure BntNovoExemplaresClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,7 +49,7 @@ begin
   FreeAndNil(FEditoras);
 end;
 
-procedure TFTelaPrincipal.ToolButton1Click(Sender: TObject);
+procedure TFTelaPrincipal.BntNovoAutorClick(Sender: TObject);
 begin
 
   FAutor :=  TFAutor.Create(Application);
@@ -58,7 +58,7 @@ begin
   FreeAndNil(FEditoras);
 end;
 
-procedure TFTelaPrincipal.ToolButton2Click(Sender: TObject);
+procedure TFTelaPrincipal.BntNovoEditorasClick(Sender: TObject);
 begin
   FEditoras :=TFEditoras.Create(Application);
   FEditoras.FDQuery1.Open;
@@ -66,7 +66,7 @@ begin
   FreeAndNil(FEditoras);
 end;
 
-procedure TFTelaPrincipal.ToolButton3Click(Sender: TObject);
+procedure TFTelaPrincipal.BntNovoExemplaresClick(Sender: TObject);
 begin
   FExemplares := TFExemplares.Create(Application);
   FExemplares.FDQuery1.Open;

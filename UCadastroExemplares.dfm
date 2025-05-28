@@ -3,7 +3,7 @@ object FCadastroExemplares: TFCadastroExemplares
   Top = 0
   Caption = 'Cadastro Exemplares'
   ClientHeight = 401
-  ClientWidth = 482
+  ClientWidth = 385
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,12 +14,12 @@ object FCadastroExemplares: TFCadastroExemplares
   OnClose = FormClose
   TextHeight = 15
   object Label1: TLabel
-    Left = 16
+    Left = 18
     Top = 11
-    Width = 74
+    Width = 11
     Height = 15
-    Caption = 'EXEMPLAR_ID'
-    FocusControl = DBEdit1
+    Caption = 'ID'
+    FocusControl = TxtId
   end
   object Label2: TLabel
     Left = 18
@@ -27,7 +27,7 @@ object FCadastroExemplares: TFCadastroExemplares
     Width = 42
     Height = 15
     Caption = 'EDICAO'
-    FocusControl = DBEdit2
+    FocusControl = TxtEdicao
   end
   object Label3: TLabel
     Left = 18
@@ -35,34 +35,34 @@ object FCadastroExemplares: TFCadastroExemplares
     Width = 26
     Height = 15
     Caption = 'ANO'
-    FocusControl = DBEdit3
+    FocusControl = TxtAno
   end
   object Label4: TLabel
-    Left = 16
+    Left = 18
     Top = 272
     Width = 25
     Height = 15
     Caption = 'ISBN'
-    FocusControl = DBEdit4
+    FocusControl = TxtIsbn
   end
   object Label5: TLabel
     Left = 18
     Top = 72
-    Width = 72
+    Width = 79
     Height = 15
-    Caption = 'NOME_LIVRO'
-    FocusControl = DBEdit1
+    Caption = 'Nome do Livro'
+    FocusControl = TxtId
   end
   object Label6: TLabel
     Left = 18
     Top = 122
-    Width = 86
+    Width = 89
     Height = 15
-    Caption = 'NOME_EDITORA'
-    FocusControl = DBEdit1
+    Caption = 'Nome da Editora'
+    FocusControl = TxtId
   end
-  object DBEdit1: TDBEdit
-    Left = 16
+  object TxtId: TDBEdit
+    Left = 18
     Top = 32
     Width = 154
     Height = 23
@@ -70,8 +70,8 @@ object FCadastroExemplares: TFCadastroExemplares
     DataSource = DataSource1
     TabOrder = 0
   end
-  object DBEdit2: TDBEdit
-    Left = 16
+  object TxtEdicao: TDBEdit
+    Left = 18
     Top = 200
     Width = 154
     Height = 23
@@ -79,8 +79,8 @@ object FCadastroExemplares: TFCadastroExemplares
     DataSource = DataSource1
     TabOrder = 1
   end
-  object DBEdit3: TDBEdit
-    Left = 16
+  object TxtAno: TDBEdit
+    Left = 18
     Top = 243
     Width = 154
     Height = 23
@@ -88,16 +88,16 @@ object FCadastroExemplares: TFCadastroExemplares
     DataSource = DataSource1
     TabOrder = 2
   end
-  object DBEdit4: TDBEdit
+  object TxtIsbn: TDBEdit
     Left = 18
     Top = 293
-    Width = 454
+    Width = 347
     Height = 23
     DataField = 'ISBN'
     DataSource = DataSource1
     TabOrder = 3
   end
-  object DBLookupComboBox1: TDBLookupComboBox
+  object CBoxLivroNome: TDBLookupComboBox
     Left = 18
     Top = 93
     Width = 145
@@ -106,10 +106,10 @@ object FCadastroExemplares: TFCadastroExemplares
     DataSource = DataSource1
     KeyField = 'LIVRO_ID'
     ListField = 'LIVRO_TITULO'
-    ListSource = DataSource2
+    ListSource = DataSourceLivros
     TabOrder = 4
   end
-  object DBLookupComboBox2: TDBLookupComboBox
+  object CBoxEditoraNome: TDBLookupComboBox
     Left = 18
     Top = 143
     Width = 145
@@ -118,26 +118,26 @@ object FCadastroExemplares: TFCadastroExemplares
     DataSource = DataSource1
     KeyField = 'EDITORA_ID'
     ListField = 'EDITORA_NOME'
-    ListSource = DataSource3
+    ListSource = DataSourceEditora
     TabOrder = 5
   end
-  object Button1: TButton
-    Left = 128
-    Top = 352
+  object BntCancelar: TButton
+    Left = 80
+    Top = 344
     Width = 75
     Height = 25
-    Caption = 'Sair'
+    Caption = 'Cancelar'
     TabOrder = 6
-    OnClick = Button1Click
+    OnClick = BntCancelarClick
   end
-  object Button2: TButton
-    Left = 280
-    Top = 352
+  object BntSalvar: TButton
+    Left = 232
+    Top = 344
     Width = 75
     Height = 25
     Caption = 'Salvar'
     TabOrder = 7
-    OnClick = Button2Click
+    OnClick = BntSalvarClick
   end
   object FDQuery1: TFDQuery
     Connection = FTelaPrincipal.FDConnection1
@@ -148,8 +148,8 @@ object FCadastroExemplares: TFCadastroExemplares
     SQL.Strings = (
       'select * from exemplares'
       'where exemplar_id like :exemplar_id')
-    Left = 232
-    Top = 32
+    Left = 200
+    Top = 16
     ParamData = <
       item
         Name = 'EXEMPLAR_ID'
@@ -190,8 +190,8 @@ object FCadastroExemplares: TFCadastroExemplares
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 296
-    Top = 32
+    Left = 280
+    Top = 16
   end
   object FDUpdateSQL1: TFDUpdateSQL
     Connection = FTelaPrincipal.FDConnection1
@@ -226,33 +226,33 @@ object FCadastroExemplares: TFCadastroExemplares
       '  ANO, ISBN'
       'FROM EXEMPLARES'
       'WHERE EXEMPLAR_ID = :OLD_EXEMPLAR_ID')
-    Left = 384
-    Top = 32
+    Left = 256
+    Top = 72
   end
-  object FDQuery2: TFDQuery
+  object QueryLivros: TFDQuery
     Active = True
     Connection = FTelaPrincipal.FDConnection1
     SQL.Strings = (
       'select * from livros')
-    Left = 224
-    Top = 96
+    Left = 208
+    Top = 136
   end
-  object DataSource2: TDataSource
-    DataSet = FDQuery2
-    Left = 296
-    Top = 96
+  object DataSourceLivros: TDataSource
+    DataSet = QueryLivros
+    Left = 304
+    Top = 136
   end
-  object FDQuery3: TFDQuery
+  object QueryEditora: TFDQuery
     Active = True
     Connection = FTelaPrincipal.FDConnection1
     SQL.Strings = (
       'select * from editora')
     Left = 216
-    Top = 168
+    Top = 208
   end
-  object DataSource3: TDataSource
-    DataSet = FDQuery3
-    Left = 280
-    Top = 168
+  object DataSourceEditora: TDataSource
+    DataSet = QueryEditora
+    Left = 312
+    Top = 208
   end
 end

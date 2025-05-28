@@ -14,14 +14,14 @@ type
     FDQuery1: TFDQuery;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
+    BntNovo: TButton;
+    BntEditar: TButton;
+    BntApagar: TButton;
+    BntSair: TButton;
+    procedure BntNovoClick(Sender: TObject);
+    procedure BntEditarClick(Sender: TObject);
+    procedure BntApagarClick(Sender: TObject);
+    procedure BntSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +37,7 @@ implementation
 
 uses UTelaPrincipal, UCadastroLivros;
 
-procedure TFLivros.Button1Click(Sender: TObject);
+procedure TFLivros.BntNovoClick(Sender: TObject);
 begin
   FCadastroLivros := TFCadastroLivros.Create(Self);
   FCadastroLivros.FDQuery1.Open;
@@ -47,7 +47,7 @@ begin
   FDQuery1.Refresh;
 end;
 
-procedure TFLivros.Button2Click(Sender: TObject);
+procedure TFLivros.BntEditarClick(Sender: TObject);
 begin
   var msg: string := 'Selecione um campo';
   if(FDQuery1.IsEmpty) then
@@ -69,7 +69,7 @@ begin
 
 end;
 
-procedure TFLivros.Button3Click(Sender: TObject);
+procedure TFLivros.BntApagarClick(Sender: TObject);
 begin
 
   var msg: string := 'Selecione um campo';
@@ -91,7 +91,7 @@ begin
 
 end;
 
-procedure TFLivros.Button4Click(Sender: TObject);
+procedure TFLivros.BntSairClick(Sender: TObject);
 begin
   Close;
 end;

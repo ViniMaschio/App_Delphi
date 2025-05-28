@@ -1,0 +1,81 @@
+object FAutor: TFAutor
+  Left = 0
+  Top = 0
+  Caption = 'Formulario Autor'
+  ClientHeight = 362
+  ClientWidth = 727
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poDesktopCenter
+  TextHeight = 15
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 32
+    Width = 713
+    Height = 257
+    DataSource = DataSource1
+    ReadOnly = True
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'Novo'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 136
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'Editar'
+    TabOrder = 2
+    OnClick = Button2Click
+  end
+  object Button3: TButton
+    Left = 256
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'Deletar'
+    TabOrder = 3
+    OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 616
+    Top = 312
+    Width = 75
+    Height = 25
+    Caption = 'Sair'
+    TabOrder = 4
+    OnClick = Button4Click
+  end
+  object FDQuery1: TFDQuery
+    Active = True
+    Connection = FTelaPrincipal.FDConnection1
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint]
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.AutoIncFields = 'autor_id'
+    SQL.Strings = (
+      'select * from autor')
+    Left = 456
+    Top = 72
+  end
+  object DataSource1: TDataSource
+    DataSet = FDQuery1
+    Left = 320
+    Top = 72
+  end
+end

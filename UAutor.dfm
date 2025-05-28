@@ -26,41 +26,41 @@ object FAutor: TFAutor
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object Button1: TButton
+  object BntNovo: TButton
     Left = 24
     Top = 312
     Width = 75
     Height = 25
     Caption = 'Novo'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = BntNovoClick
   end
-  object Button2: TButton
+  object BntEditor: TButton
     Left = 136
     Top = 312
     Width = 75
     Height = 25
     Caption = 'Editar'
     TabOrder = 2
-    OnClick = Button2Click
+    OnClick = BntEditorClick
   end
-  object Button3: TButton
-    Left = 256
+  object BntDeletar: TButton
+    Left = 248
     Top = 312
     Width = 75
     Height = 25
     Caption = 'Deletar'
     TabOrder = 3
-    OnClick = Button3Click
+    OnClick = BntDeletarClick
   end
-  object Button4: TButton
+  object BntSair: TButton
     Left = 616
     Top = 312
     Width = 75
     Height = 25
     Caption = 'Sair'
     TabOrder = 4
-    OnClick = Button4Click
+    OnClick = BntSairClick
   end
   object FDQuery1: TFDQuery
     Active = True
@@ -69,7 +69,10 @@ object FAutor: TFAutor
     UpdateOptions.FetchGeneratorsPoint = gpNone
     UpdateOptions.AutoIncFields = 'autor_id'
     SQL.Strings = (
-      'select * from autor')
+      
+        'select autor_id as ID, autor_nome as Nome, autor_sobrenome  as S' +
+        'obrenome '
+      'from autor')
     Left = 456
     Top = 72
   end

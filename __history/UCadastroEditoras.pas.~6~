@@ -1,0 +1,76 @@
+unit UCadastroEditoras;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Vcl.StdCtrls, Data.DB,
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.DBCtrls, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFCadastroEditoras = class(TForm)
+    FDQuery1: TFDQuery;
+    FDUpdateSQL1: TFDUpdateSQL;
+    FDQuery1EDITORA_ID: TFDAutoIncField;
+    FDQuery1EDITORA_NOME: TStringField;
+    FDQuery1EDITORA_CIDADE: TStringField;
+    ID: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    EditoraNome: TLabel;
+    TxtEditoraNome: TDBEdit;
+    EditoraCidade: TLabel;
+    TxtEditoraCidade: TDBEdit;
+    BntCancelar: TButton;
+    BntSalvar: TButton;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BntCancelarClick(Sender: TObject);
+    procedure BntSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FCadastroEditoras: TFCadastroEditoras;
+
+implementation
+
+{$R *.dfm}
+
+uses UTelaPrincipal;
+
+procedure TFCadastroEditoras.BntCancelarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TFCadastroEditoras.BntSalvarClick(Sender: TObject);
+begin
+
+  var msg : string := 'campos vazios';
+
+  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  begin
+    MessageDlg(msg,mtError,[mbOk],0);
+    Abort;
+  end;
+
+  FDQuery1.Post;
+
+  Close;
+
+end;
+
+procedure TFCadastroEditoras.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  if  FDQuery1.state in [dsEdit, dsInsert] then
+  FDQuery1.Cancel;
+
+  Close;
+end;
+
+end.

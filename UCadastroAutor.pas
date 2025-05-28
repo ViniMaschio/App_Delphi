@@ -20,13 +20,13 @@ type
     DBEdit1: TDBEdit;
     DataSource1: TDataSource;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    TxtAutorNome: TDBEdit;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
-    Button1: TButton;
-    Button2: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    TxtAutorSobrenome: TDBEdit;
+    BntCancelar: TButton;
+    BntSalvar: TButton;
+    procedure BntCancelarClick(Sender: TObject);
+    procedure BntSalvarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
@@ -43,17 +43,17 @@ implementation
 
 uses UTelaPrincipal;
 
-procedure TFCadastroAutor.Button1Click(Sender: TObject);
+procedure TFCadastroAutor.BntCancelarClick(Sender: TObject);
 begin
 Close;
 end;
 
-procedure TFCadastroAutor.Button2Click(Sender: TObject);
+procedure TFCadastroAutor.BntSalvarClick(Sender: TObject);
 begin
 
-  var msg : string := 'campos vazios';
+  var msg : string := 'Preencher todos os campos';
 
-  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  if (TxtAutorNome.Field.Text.IsEmpty or TxtAutorSobrenome.Field.Text.IsEmpty) then
   begin
     MessageDlg(msg,mtError,[mbOk],0);
     Abort;

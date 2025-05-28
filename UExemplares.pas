@@ -14,14 +14,14 @@ type
     FDQuery1: TFDQuery;
     DataSource1: TDataSource;
     DBGrid1: TDBGrid;
-    Button1: TButton;
-    Button2: TButton;
-    Button3: TButton;
-    Button4: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
+    BntNovo: TButton;
+    BntEditar: TButton;
+    BntDeletar: TButton;
+    BntSair: TButton;
+    procedure BntNovoClick(Sender: TObject);
+    procedure BntEditarClick(Sender: TObject);
+    procedure BntDeletarClick(Sender: TObject);
+    procedure BntSairClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,7 +37,7 @@ implementation
 
 uses UTelaPrincipal, UCadastroExemplares;
 
-procedure TFExemplares.Button1Click(Sender: TObject);
+procedure TFExemplares.BntNovoClick(Sender: TObject);
 begin
   FCadastroExemplares := TFCadastroExemplares.Create(Self);
   FCadastroExemplares.FDQuery1.Open;
@@ -47,7 +47,7 @@ begin
   FDQuery1.Refresh;
 end;
 
-procedure TFExemplares.Button2Click(Sender: TObject);
+procedure TFExemplares.BntEditarClick(Sender: TObject);
 begin
   var msg: string := 'Selecione um campo';
   if(FDQuery1.IsEmpty) then
@@ -69,7 +69,7 @@ begin
 
 end;
 
-procedure TFExemplares.Button3Click(Sender: TObject);
+procedure TFExemplares.BntDeletarClick(Sender: TObject);
 begin
 
   var msg: string := 'Selecione um campo';
@@ -91,7 +91,7 @@ begin
 
 end;
 
-procedure TFExemplares.Button4Click(Sender: TObject);
+procedure TFExemplares.BntSairClick(Sender: TObject);
 begin
   Close;
 end;

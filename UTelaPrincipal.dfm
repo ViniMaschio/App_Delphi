@@ -42,26 +42,26 @@ object FTelaPrincipal: TFTelaPrincipal
       ImageIndex = 0
       OnClick = BnovoLivroClick
     end
-    object ToolButton1: TToolButton
+    object BntNovoAutor: TToolButton
       Left = 67
       Top = 0
       Caption = 'Autor'
       ImageIndex = 1
-      OnClick = ToolButton1Click
+      OnClick = BntNovoAutorClick
     end
-    object ToolButton2: TToolButton
+    object BntNovoEditoras: TToolButton
       Left = 134
       Top = 0
       Caption = 'Editoras'
       ImageIndex = 2
-      OnClick = ToolButton2Click
+      OnClick = BntNovoEditorasClick
     end
-    object ToolButton3: TToolButton
+    object BntNovoExemplares: TToolButton
       Left = 201
       Top = 0
       Caption = 'Exemplares'
       ImageIndex = 3
-      OnClick = ToolButton3Click
+      OnClick = BntNovoExemplaresClick
     end
   end
   object FDConnection1: TFDConnection

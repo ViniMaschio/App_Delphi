@@ -3,7 +3,7 @@ object FEditoras: TFEditoras
   Top = 0
   Caption = 'Editoras'
   ClientHeight = 340
-  ClientWidth = 717
+  ClientWidth = 740
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,7 +15,7 @@ object FEditoras: TFEditoras
   object DBGrid1: TDBGrid
     Left = 8
     Top = 8
-    Width = 697
+    Width = 713
     Height = 257
     DataSource = DataSource1
     ReadOnly = True
@@ -26,14 +26,14 @@ object FEditoras: TFEditoras
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object BSair: TButton
+  object BntSair: TButton
     Left = 592
     Top = 288
     Width = 75
     Height = 25
     Caption = 'Sair'
     TabOrder = 1
-    OnClick = BSairClick
+    OnClick = BntSairClick
   end
   object BNovo: TButton
     Left = 40
@@ -44,29 +44,32 @@ object FEditoras: TFEditoras
     TabOrder = 2
     OnClick = BNovoClick
   end
-  object BDeletetar: TButton
+  object BntDeletar: TButton
     Left = 232
     Top = 288
     Width = 75
     Height = 25
     Caption = 'Deletar'
     TabOrder = 3
-    OnClick = BDeletetarClick
+    OnClick = BntDeletarClick
   end
-  object BEditar: TButton
+  object BntEditar: TButton
     Left = 136
     Top = 288
     Width = 75
     Height = 25
     Caption = 'Editar'
     TabOrder = 4
-    OnClick = BEditarClick
+    OnClick = BntEditarClick
   end
   object FDQuery1: TFDQuery
     Active = True
     Connection = FTelaPrincipal.FDConnection1
     SQL.Strings = (
-      'select * from editora')
+      
+        'select editora_id as ID, editora_nome as Nome, editora_cidade as' +
+        ' Cidade '
+      'from editora;')
     Left = 312
     Top = 136
   end

@@ -2,8 +2,8 @@ object FCadastroAutor: TFCadastroAutor
   Left = 0
   Top = 0
   Caption = 'Cadastro Autor'
-  ClientHeight = 281
-  ClientWidth = 776
+  ClientHeight = 265
+  ClientWidth = 505
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,26 +16,26 @@ object FCadastroAutor: TFCadastroAutor
   object Label1: TLabel
     Left = 8
     Top = 16
-    Width = 53
+    Width = 11
     Height = 15
-    Caption = 'AUTOR_ID'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object Label2: TLabel
     Left = 8
     Top = 72
-    Width = 77
+    Width = 83
     Height = 15
-    Caption = 'AUTOR_NOME'
-    FocusControl = DBEdit2
+    Caption = 'Nome do Autor'
+    FocusControl = TxtAutorNome
   end
   object Label3: TLabel
     Left = 8
     Top = 136
-    Width = 112
+    Width = 111
     Height = 15
-    Caption = 'AUTOR_SOBRENOME'
-    FocusControl = DBEdit3
+    Caption = 'Sobrenome do Autor'
+    FocusControl = TxtAutorSobrenome
   end
   object DBEdit1: TDBEdit
     Left = 8
@@ -46,41 +46,41 @@ object FCadastroAutor: TFCadastroAutor
     DataSource = DataSource1
     TabOrder = 0
   end
-  object DBEdit2: TDBEdit
+  object TxtAutorNome: TDBEdit
     Left = 8
     Top = 88
-    Width = 754
+    Width = 481
     Height = 23
     DataField = 'AUTOR_NOME'
     DataSource = DataSource1
     TabOrder = 1
   end
-  object DBEdit3: TDBEdit
+  object TxtAutorSobrenome: TDBEdit
     Left = 8
-    Top = 152
-    Width = 754
+    Top = 157
+    Width = 481
     Height = 23
     DataField = 'AUTOR_SOBRENOME'
     DataSource = DataSource1
     TabOrder = 2
   end
-  object Button1: TButton
-    Left = 256
-    Top = 224
+  object BntCancelar: TButton
+    Left = 136
+    Top = 216
     Width = 75
     Height = 25
     Caption = 'Cancelar'
     TabOrder = 3
-    OnClick = Button1Click
+    OnClick = BntCancelarClick
   end
-  object Button2: TButton
-    Left = 392
-    Top = 224
+  object BntSalvar: TButton
+    Left = 272
+    Top = 216
     Width = 75
     Height = 25
-    Caption = 'Ok'
+    Caption = 'Salvar'
     TabOrder = 4
-    OnClick = Button2Click
+    OnClick = BntSalvarClick
   end
   object FDQuery1: TFDQuery
     Connection = FTelaPrincipal.FDConnection1
@@ -89,7 +89,7 @@ object FCadastroAutor: TFCadastroAutor
     SQL.Strings = (
       'select * from autor '
       'where autor_id like :autor_id')
-    Left = 488
+    Left = 400
     Top = 32
     ParamData = <
       item
@@ -140,12 +140,12 @@ object FCadastroAutor: TFCadastroAutor
       'SELECT AUTOR_ID, AUTOR_NOME, AUTOR_SOBRENOME'
       'FROM AUTOR'
       'WHERE AUTOR_ID = :OLD_AUTOR_ID')
-    Left = 392
+    Left = 304
     Top = 32
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 296
+    Left = 208
     Top = 32
   end
 end

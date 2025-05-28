@@ -22,6 +22,7 @@ O objetivo principal deste projeto é explorar e praticar conceitos fundamentais
 ## 📦 Estrutura
 
 O projeto foi organizado em:
+
 - Telas com `TForm` para cadastro e visualização
 - Módulo de conexão com Firebase
 - Lógica separada da interface para facilitar entendimento
@@ -29,6 +30,7 @@ O projeto foi organizado em:
 ## 🧪 Finalidade Educacional
 
 Este aplicativo foi desenvolvido com **fins educacionais**, para praticar:
+
 - Programação orientada a objetos com Delphi
 - Comunicação com serviços REST
 - Uso do Firebase como backend em aplicações simples
@@ -36,7 +38,3 @@ Este aplicativo foi desenvolvido com **fins educacionais**, para praticar:
 ## 📝 Autor
 
 Desenvolvido por **Vinicius Maschio**.
-
----
-
-Se tiver alguma sugestão ou quiser contribuir, fique à vontade para abrir uma issue ou pull request.

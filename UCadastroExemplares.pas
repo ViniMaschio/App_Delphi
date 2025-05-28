@@ -20,27 +20,27 @@ type
     FDQuery1ANO: TSmallintField;
     FDQuery1ISBN: TStringField;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
+    TxtId: TDBEdit;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    TxtEdicao: TDBEdit;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    TxtAno: TDBEdit;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    TxtIsbn: TDBEdit;
     Label5: TLabel;
-    DBLookupComboBox1: TDBLookupComboBox;
-    FDQuery2: TFDQuery;
-    DataSource2: TDataSource;
+    CBoxLivroNome: TDBLookupComboBox;
+    QueryLivros: TFDQuery;
+    DataSourceLivros: TDataSource;
     FDQuery1EXEMPLAR_LIVRO_ID: TIntegerField;
     FDQuery1EXEMPLAR_EDITORA_ID: TIntegerField;
     Label6: TLabel;
-    DBLookupComboBox2: TDBLookupComboBox;
-    FDQuery3: TFDQuery;
-    DataSource3: TDataSource;
-    Button1: TButton;
-    Button2: TButton;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    CBoxEditoraNome: TDBLookupComboBox;
+    QueryEditora: TFDQuery;
+    DataSourceEditora: TDataSource;
+    BntCancelar: TButton;
+    BntSalvar: TButton;
+    procedure BntCancelarClick(Sender: TObject);
+    procedure BntSalvarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
 
   private
@@ -60,17 +60,18 @@ uses UTelaPrincipal;
 
 
 
-procedure TFCadastroExemplares.Button1Click(Sender: TObject);
+procedure TFCadastroExemplares.BntCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFCadastroExemplares.Button2Click(Sender: TObject);
+procedure TFCadastroExemplares.BntSalvarClick(Sender: TObject);
 begin
 
-  var msg : string := 'campos vazios';
+  var msg : string := 'Preencher todos os campos';
 
-  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  if (CBoxLivroNome.Field.Text.IsEmpty or CBoxEditoraNome.Field.Text.IsEmpty or TxtEdicao.Field.Text.IsEmpty
+  or TxtAno.Field.Text.IsEmpty or TxtIsbn.Field.Text.IsEmpty) then
   begin
     MessageDlg(msg,mtError,[mbOk],0);
     Abort;

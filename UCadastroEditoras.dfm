@@ -2,8 +2,8 @@ object FCadastroEditoras: TFCadastroEditoras
   Left = 0
   Top = 0
   Caption = 'Cadastro Editoras'
-  ClientHeight = 348
-  ClientWidth = 798
+  ClientHeight = 263
+  ClientWidth = 509
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,74 +13,74 @@ object FCadastroEditoras: TFCadastroEditoras
   Position = poDesktopCenter
   OnClose = FormClose
   TextHeight = 15
-  object EditoraId: TLabel
+  object ID: TLabel
     Left = 24
-    Top = 40
-    Width = 62
+    Top = 16
+    Width = 11
     Height = 15
-    Caption = 'EDITORA_ID'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object EditoraNome: TLabel
     Left = 24
-    Top = 120
-    Width = 86
+    Top = 72
+    Width = 89
     Height = 15
-    Caption = 'EDITORA_NOME'
-    FocusControl = DBEdit2
+    Caption = 'Nome da Editora'
+    FocusControl = TxtEditoraNome
   end
   object EditoraCidade: TLabel
     Left = 24
-    Top = 192
-    Width = 92
+    Top = 128
+    Width = 93
     Height = 15
-    Caption = 'EDITORA_CIDADE'
-    FocusControl = DBEdit3
+    Caption = 'Cidade da Editora'
+    FocusControl = TxtEditoraCidade
   end
   object DBEdit1: TDBEdit
     Left = 24
-    Top = 56
+    Top = 32
     Width = 62
     Height = 23
     DataField = 'EDITORA_ID'
     DataSource = DataSource1
     TabOrder = 0
   end
-  object DBEdit2: TDBEdit
+  object TxtEditoraNome: TDBEdit
     Left = 24
-    Top = 136
-    Width = 754
+    Top = 88
+    Width = 467
     Height = 23
     DataField = 'EDITORA_NOME'
     DataSource = DataSource1
     TabOrder = 1
   end
-  object DBEdit3: TDBEdit
+  object TxtEditoraCidade: TDBEdit
     Left = 24
-    Top = 208
-    Width = 754
+    Top = 144
+    Width = 467
     Height = 23
     DataField = 'EDITORA_CIDADE'
     DataSource = DataSource1
     TabOrder = 2
   end
-  object Button1: TButton
-    Left = 208
-    Top = 280
+  object BntCancelar: TButton
+    Left = 128
+    Top = 216
     Width = 75
     Height = 25
-    Caption = 'Sair'
+    Caption = 'Cancelar'
     TabOrder = 3
-    OnClick = Button1Click
+    OnClick = BntCancelarClick
   end
-  object Button2: TButton
-    Left = 416
-    Top = 280
+  object BntSalvar: TButton
+    Left = 296
+    Top = 216
     Width = 75
     Height = 25
     Caption = 'Salvar'
     TabOrder = 4
-    OnClick = Button2Click
+    OnClick = BntSalvarClick
   end
   object FDQuery1: TFDQuery
     Connection = FTelaPrincipal.FDConnection1
@@ -91,8 +91,8 @@ object FCadastroEditoras: TFCadastroEditoras
     SQL.Strings = (
       'select * from editora'
       'where editora_id like :editora_id')
-    Left = 232
-    Top = 48
+    Left = 200
+    Top = 8
     ParamData = <
       item
         Name = 'EDITORA_ID'
@@ -142,12 +142,12 @@ object FCadastroEditoras: TFCadastroEditoras
       'SELECT EDITORA_ID, EDITORA_NOME, EDITORA_CIDADE'
       'FROM EDITORA'
       'WHERE EDITORA_ID = :OLD_EDITORA_ID')
-    Left = 512
-    Top = 48
+    Left = 368
+    Top = 16
   end
   object DataSource1: TDataSource
     DataSet = FDQuery1
-    Left = 400
-    Top = 40
+    Left = 280
+    Top = 16
   end
 end

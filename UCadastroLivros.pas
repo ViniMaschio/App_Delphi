@@ -20,19 +20,19 @@ type
     FDQuery1LIVRO_AUTOR_ID: TIntegerField;
     DataSource1: TDataSource;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    TxtLivroTitulo: TDBEdit;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    TxtLivroSubtitulo: TDBEdit;
     Label4: TLabel;
-    Button1: TButton;
-    Button2: TButton;
+    BntCancelar: TButton;
+    BntSalvar: TButton;
     FDQuery2: TFDQuery;
     DataSource2: TDataSource;
-    DBLookupComboBox1: TDBLookupComboBox;
+    CBoxAutor: TDBLookupComboBox;
     Label1: TLabel;
-    DBEdit1: TDBEdit;
-    procedure Button1Click(Sender: TObject);
-    procedure Button2Click(Sender: TObject);
+    TxtId: TDBEdit;
+    procedure BntCancelarClick(Sender: TObject);
+    procedure BntSalvarClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
@@ -49,17 +49,17 @@ implementation
 
 uses UTelaPrincipal;
 
-procedure TFCadastroLivros.Button1Click(Sender: TObject);
+procedure TFCadastroLivros.BntCancelarClick(Sender: TObject);
 begin
   Close;
 end;
 
-procedure TFCadastroLivros.Button2Click(Sender: TObject);
+procedure TFCadastroLivros.BntSalvarClick(Sender: TObject);
 begin
 
-  var msg : string := 'campos vazios';
+  var msg : string := 'Preencher todos os campos';
 
-  if (DBEdit2.Field.Text.IsEmpty or DBEdit3.Field.Text.IsEmpty) then
+  if (TxtLivroTitulo.Field.Text.IsEmpty or TxtLivroSubtitulo.Field.Text.IsEmpty or CBoxAutor.Field.Text.IsEmpty) then
   begin
     MessageDlg(msg,mtError,[mbOk],0);
     Abort;
