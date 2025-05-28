@@ -37,4 +37,4 @@ Este aplicativo foi desenvolvido com **fins educacionais**, para praticar:
 
 ## 📝 Autor
 
-Desenvolvido por **Vinicius Maschio**.
+Desenvolvido por **Vinicius Ribeiro Maschio**.
